@@ -19,12 +19,13 @@ import random
 
 def getRandomFortune():
     fortunes = [
-        "I see much code in your future",
-        "Consider eating more fortune cookies",
-        "You have tamed the mighty Python, now you must free it onto the Great Spider's Web!"
+        "Your fortune belongs in another cookie",
+        "Try again later",
+        "It's possible that you will slip and fall today...in fact I'm sure of it",
+        "Why would you ever trust your fate to me?",
     ]
 
-    index = random.randint(0,2)
+    index = random.randint(0,3)
     return fortunes[index]
 
 class MainHandler(webapp2.RequestHandler):
@@ -39,7 +40,7 @@ class MainHandler(webapp2.RequestHandler):
         number_sentence = "Your lucky number: " + lucky_number
         number_paragraph = "<p>" + number_sentence + "</p>"
 
-        cookie_again_button = "<a href='.'><button>Another cookie plz!</button></a>"
+        cookie_again_button = "<a href='.'><button>Keep at it?</button></a>"
 
         content = header + fortune_paragraph + number_paragraph + cookie_again_button
 
